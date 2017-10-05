@@ -1,0 +1,53 @@
+---
+title: "formative.rmd"
+author: "yigu liang"
+date: "2017/10/5"
+output: html_document
+---
+
+Question 5.
+
+
+Question 6. 
+```{r}
+sum(D1$course_id=="HarvardX/CS50x/2012")
+```
+
+Question 7. 
+```{r}
+sum(D1$course_id=="HarvardX/CS50x",D1$final_cc_cname_DI=="Columbia",D1$start_time_DI=="2012-10-15")
+```
+
+Question 8
+```{r}
+D2 <- subset(D1, D1$final_cc_cname_DI=="China",select=c(userid_DI,start_time_DI,final_cc_cname_DI))
+```
+
+```{r}
+D2
+```
+
+```{r}
+registration_date = "2012-10-10"
+D3 <- data.frame(student_id=c(D1$userid_DI),regist_date=c(D1$start_time_DI),y=c(ifesle(regist_date==registration_date，1，NA)))
+```
+Question 9. 
+```{r}
+registration_date = "2012-10-10"
+D3 <- data.frame(student_id=c(D1$userid_DI),regist_date=c(D1$start_time_DI),y=c(ifelse(D1$start_time_DI==registration_date,1,NA)))
+D3
+```
+ 
+```{r}
+M1 <-as.Matrix(D3)
+```
+Question 11
+```{r}
+M1 <-as.matrix(D3)
+```
+
+Question 12.
+```{r}
+M2 <-t(M1)
+```
+
